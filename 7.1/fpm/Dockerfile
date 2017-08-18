@@ -1,4 +1,4 @@
-FROM php:7.0-apache
+FROM php:7.1-fpm
 MAINTAINER Rubem Mota <rubemmota89@gmail.com>
 
 #enable mcrypt iconv and gd extensions
