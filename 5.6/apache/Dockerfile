@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install -j$(nproc) gd
 
 RUN pecl install xdebug-2.5.0 \
-    && docker-php-ext-enable redis xdebug
+    && docker-php-ext-enable xdebug
 
 # Enable some pdo mysql extensions
 RUN docker-php-ext-install pdo pdo_mysql
