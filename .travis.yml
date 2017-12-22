@@ -1,0 +1,15 @@
+language: bash
+services: docker
+
+
+jobs:
+  include:
+    - stage: build docker image for php 5.6
+      script: docker build -t php5.6-fpm 5.6/fpm
+    - script: docker build -t php5.6-fpm 5.6/fpm
+    - stage: build docker image for php 7.0
+      script: docker build -t php7.0-fpm 7.0/fpm
+    - script: docker build -t php7.0-fpm 7.0/fpm
+    - stage: build docker image for php 7.1
+      script: docker build -t php7.1-fpm 7.1/fpm
+    - script: docker build -t php7.1-fpm 7.1/fpm
