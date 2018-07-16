@@ -26,12 +26,14 @@ RUN apt-get update && apt-get install -y \
     unixodbc-dev \
     zlib1g-dev \
     libtidy-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install -j$(nproc) iconv mcrypt \
+    && rm -rf /var/lib/apt/lists/*
+RUN docker-php-ext-install -j$(nproc) iconv mcrypt \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install pdo_pgsql \
+    && docker-php-ext-install pdo \
+    && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install curl \
     && docker-php-ext-install intl \
     && docker-php-ext-install xml \
@@ -42,6 +44,3 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install xdebug-2.5.0 \
     && docker-php-ext-enable xdebug
-
-# Enable some pdo mysql extensions
-RUN docker-php-ext-install pdo pdo_mysql
