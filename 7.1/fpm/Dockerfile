@@ -17,7 +17,6 @@ RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
     libpcre3-dev \
     libpng-dev \
-    libpng12-dev \
     libpq-dev \
     libsnmp-dev \
     libsqlite3-dev \
