@@ -1,5 +1,5 @@
 FROM php:7.1-apache
-MAINTAINER Rubem Mota <rubemmota89@gmail.com>
+LABEL Rubem Mota <rubemmota89@gmail.com>
 
 #enable mcrypt iconv and gd extensions
 #enable mcrypt iconv and gd extensions

@@ -1,6 +1,7 @@
-FROM php:7.1-fpm
+FROM php:7.2-apache
 LABEL Rubem Mota <rubemmota89@gmail.com>
 
+#enable mcrypt iconv and gd extensions
 #enable mcrypt iconv and gd extensions
 RUN apt-get update && apt-get install -y \
     git \
@@ -42,7 +43,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install json
 
 RUN pecl install xdebug-2.5.0 \
-    && docker-php-ext-enable xdebug
+    && docker-php-ext-enable  xdebug
 
 # Enable some pdo mysql extensions
 RUN docker-php-ext-install pdo pdo_mysql
